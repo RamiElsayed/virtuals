@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "seed" : "node src/seeds/index.js",
+    "seed": "node src/seeds/index.js",
     "start": "node src/index.js"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "mongoose": "^6.5.4"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "nodemon": "^2.0.19"
   }
 }
