@@ -1,14 +1,24 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema(
-  {
-    first: String,
-    last: String,
-    age: Number,
+
+const userSchema = {
+  first: {
+    type: String,
+    required: true,
   },
+  last: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+}
+const schema = new Schema(userSchema,
   {
     toJSON: {
-      // TODO: Mongoose will not include virtuals by default, so add a `virtuals` property and set it's value to true
+      virtuals: true,
     },
     id: false,
   }
@@ -21,6 +31,6 @@ const userSchema = new Schema(
 // TODO: Create a setter for the virtual that sets the value of the first and last name, given just the `fullName`
 
 // Initialize our User model
-const User = model('user', userSchema);
+const User = model("user", userSchema);
 
 module.exports = User;
